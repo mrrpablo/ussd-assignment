@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ussd = 777;
+
+      let inputPin = +prompt("Please enter your ussd");
+      if (inputPin === ussd) {
+        alert(`Welcome to Zenith bank,click OK to continue`);
+        let process = prompt(`What will you like to do?
+        1. Withdrawal
+        2. Deposit
+        3. Transfer
+        4. Check Balance
+        5. Pay Bills
+        6. Mobile TopUp
+        `);
+
+        if (process == 1) {
+          let withdrawal =
+            +prompt(`Please select the amount you want to withdraw
+            1. 500         5. 15000
+            2. 1000        6. 20000
+            3. 5000        7. 30000
+            4. 10000       8. Others
+           `);
+
+          if (
+            withdrawal === 1 ||
+            withdrawal === 2 ||
+            withdrawal === 3 ||
+            withdrawal === 4 ||
+            withdrawal === 5 ||
+            withdrawal === 6 ||
+            withdrawal === 7
+          ) {
+            alert("Processing transaction");
+            alert("Please take your cash");
+            confirm(`Do you want to perform another transaction
+                1. Yes
+                2. No
+                `);
+          } else if (withdrawal === 8) {
+            let userAmount = +prompt("Enter amount");
+            if (userAmount > 0 && typeof userAmount === "number") {
+              alert("Processing transaction");
+              alert("Please take your cash " + userAmount);
+              confirm(`Do you want to perform another transaction
+                1. Yes
+                2. No
+                `);
+            } else {
+              alert("Invalid request");
+            }
+          } else {
+            alert("Enter a valid value");
+          }
+        } else if (process == 2) {
+          let accountBalance = 25000;
+          let deposit = +prompt("Please enter the amount to deposit");
+          accountBalance += deposit;
+          alert(`Your new account balance is ${accountBalance}`);
+        } else if (process == 3) {
+          alert(`Feature coming soon`);
+        } else if (process == 4) {
+          let accountBalance = 25000;
+          alert(`Your account balance is ${accountBalance}`);
+        } else if (process == 5) {
+          alert("Feature coming soon");
+        } else if (process == 6) {
+          let topUp = +prompt(`Please select the amount you want to recharge
+            1. 500         5. 15000
+            2. 1000        6. 20000
+            3. 5000        7. 30000
+            4. 10000       8. Others
+           `);
+
+          if (
+            topUp === 1 ||
+            topUp === 2 ||
+            topUp === 3 ||
+            topUp === 4 ||
+            topUp === 5 ||
+            topUp === 6 ||
+            topUp === 7
+          ) {
+            alert("Processing transaction");
+            alert("Recharge Successful");
+            confirm(`Do you want to perform another transaction
+                1. Yes
+                2. No
+                `);
+          } else if (topUp === 8) {
+            let userAmount = +prompt("Enter amount");
+            if (userAmount > 0 && typeof userAmount === "number") {
+              alert("Processing transaction");
+              alert("Recharge successful " + userAmount);
+              confirm(`Do you want to perform another transaction
+                1. Yes
+                2. No
+                `);
+            } else {
+              alert("Invalid request");
+            }
+          } else {
+            alert("Enter a valid value");
+          }
+        }
+      } else {
+        alert("Enter your correct pin");
+      }
+    </script>
+  </body>
+</html>
